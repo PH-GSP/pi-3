@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Início</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <a href="/">Início</a>
+    <a href="login">Login</a>
+    <a href="signup">Cadastro</a>
+    <a href="panel">Painel</a>
+    <form id="login" action="login" method="post">
+      <label for="username">Usuário</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Senha</label>
+      <input type="password" name="password" id="password" />
+      <input type="submit" value="Logar" />
+    </form>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="card">
+        <div class="tabs">
+
+        </div>
+
+        <div id="account" class="tab-content">
+            <h2>Login</h2>
+            <p>Coloque seu e-mail e senha para entrar.</p>
+            <form id="loginForm">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" required placeholder="Digite seu e-mail" />
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" required placeholder="Digite sua senha" />
+
+                <div class="footer">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+
+    <script>
+        function showTab(tab) {
+            const accountTab = document.getElementById('account');
+            const passwordTab = document.getElementById('password');
+            const tabs = document.querySelectorAll('.tab');
+
+            if (tab === 'account') {
+                accountTab.style.display = 'block';
+                passwordTab.style.display = 'none';
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+            } else {
+                accountTab.style.display = 'none';
+                passwordTab.style.display = 'block';
+                tabs[1].classList.add('active');
+                tabs[0].classList.remove('active');
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            console.log('Login:', { email, senha });
+            window.location.href = 'painel.html'; 
+        });
+    </script>
+</body>
+</html>
